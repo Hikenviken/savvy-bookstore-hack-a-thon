@@ -7,7 +7,7 @@ const root = document.querySelector("#root");
 
 const states = {
   header: {
-    title: ""
+    title: "Savvy Coders Book Store"
   },
   navigation: {
     links: ["Books", "Albums"]

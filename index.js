@@ -31,11 +31,11 @@ const states = {
 
 function render(state) {
   root.innerHTML = `
-    ${Navigation(state)},
-    ${Header(state)},
-    ${Content(state)},
-    ${Footer(state)},
-    ${Form()},
+    ${Navigation(state)}
+    ${Header(state)}
+    ${Content(state)}
+    ${Footer(state)}
+    ${Form()}
     `;
 }
 

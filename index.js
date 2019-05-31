@@ -43,17 +43,19 @@ render(states);
 
 document.querySelector("form").addEventListener("submit", event => {
   event.preventDefault();
-  const data = event.target.elements;
-  const newProduct = {
-    name: data[0].value,
-    author: data[1].value,
-    pictureURL: data[2].value,
-    price: data[3].value,
+  const data = Array.from(event.target.elements).reduce((productData, product) => {
+    if (product.name === "sellingPoints") {
+      productData.sellingPoints = product.value.split(",");
+    } else if (product.name !== "") {
+      productData[product.name] = product.value;
+    }
 
-    // we'll learn how to handle sellingPoints next
-    sellingPoints: []
-  };
-  states.books[states.books.length] = newProduct;
+    return productData
+  }, {});
+
+  data.id = states.books.length + 1;
+
+  states.books.push(data);
 
   render(states);
 });

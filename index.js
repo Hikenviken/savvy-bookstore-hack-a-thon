@@ -34,31 +34,26 @@ function render(state) {
     ${Navigation(state)}
     ${Header(state)}
     ${Content(state)}
-    ${Footer(state)}
     ${Form()}
+    ${Footer(state)}
     `;
 }
 
 render(states);
 
-document
-    .querySelector('form')
-    .addEventListener(
-        'submit',
-        (event) => {
-            event.preventDefault();
-            const data = event.target.elements;
-            const newProduct = {
-                'name': data[0].value,
-                'author': data[1].value,
-                'pictureURL': data[2].value,
-                'price': data[3].value,
+document.querySelector("form").addEventListener("submit", event => {
+  event.preventDefault();
+  const data = event.target.elements;
+  const newProduct = {
+    name: data[0].value,
+    author: data[1].value,
+    pictureURL: data[2].value,
+    price: data[3].value,
 
-                // we'll learn how to handle sellingPoints next
-                'sellingPoints': [],
-            };
-            states.books[states.books.length] = newProduct;
+    // we'll learn how to handle sellingPoints next
+    sellingPoints: []
+  };
+  states.books[states.books.length] = newProduct;
 
-            render(states.books);
-        }
-    );
+  render(states);
+});

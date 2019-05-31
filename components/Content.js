@@ -2,7 +2,7 @@ import Book from "./Book";
 
 const buildBooksHTML = (state) => {
     let booksHTML = '';
-    state.books.forEach(book => booksHTML += `<figure>${Book(book)}</figure>`);
+    state.books.forEach(book => booksHTML += `${Book(book)}`);
     return booksHTML;
     };
 

@@ -1,18 +1,18 @@
-export default (state) => `
+export default state => `
 <form action="#">
   <span>
     <label for="name">Book Title</label>
-    <input type="text" id="name" name="bookName" placeholder="Book Title" />
+    <input type="text" id="name" name="title" placeholder="Book Title" />
   </span>
   <span>
     <label for="author">Author</label>
-    <input type="text" id="author" name="bookAuthor" placeholder="Author" />
+    <input type="text" id="author" name="creator" placeholder="Author" />
   </span>
   <div>
     <label for="pictureURL">URL</label>
     <input
       type="url"
-      name="pictureURL"
+      name="image"
       id="pictureURL"
       placeholder="https://example.com"
       pattern="https://.*"
@@ -24,10 +24,11 @@ export default (state) => `
     <label for="price">Price</label>
     <input type="number" id="price" name="priceBook" placeholder="Price" />
   </div>
+
   <div>
     <label for="sellingPoints">Selling Points</label>
     <textarea
-      name="sellingPoints"
+      name="selling_points"
       id="sellingPoints"
       cols="30"
       rows="10"

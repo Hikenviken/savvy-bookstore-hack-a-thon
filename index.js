@@ -50,10 +50,7 @@ function addListeners() {
       },
       {}
     );
-
-
-    states.books.push(data);
-
+    states.products[`${data.type}s`].push(data);
     render(states);
   });
 }

@@ -1,9 +1,7 @@
 import Book from "./Book";
 
-const buildBooksHTML = (state) => {
-    let booksHTML = '';
-    state.books.forEach(book => booksHTML += `${Book(book)}`);
-    return booksHTML;
+function (books) {
+    return books.map(book => `${Book(book)}`)
     };
 
-export default (states) => `${buildBooksHTML(states)}`;
+export default (state) => `${buildBooks(state.books)}`;

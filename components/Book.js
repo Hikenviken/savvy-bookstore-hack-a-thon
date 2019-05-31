@@ -6,6 +6,6 @@ export default (state) => `
     <img src=${state.pictureUrl} alt="Photo wuz here">
     <p>${state.name} - ${state.author} - ${state.price}</p>
     <ul>
-        ${buildSPHTML(state.sellingPoints)}
+        ${buildSPHTML(state.selling_points)}
     </ul>
 `;

@@ -33,6 +33,17 @@ export default (state) => `
       rows="10"
     ></textarea>
   </div>
+
+  <div>
+    <input type="radio" id="book" name="type" value="book">
+    <label for="book">Book</label>
+  </div>
+
+  <div>
+    <input type="radio" id="album" name="type" value="album">
+    <label for="album">Album</label>
+  </div>
+
   <div>
       <input type="submit" value="Submit!"/>
   </div>

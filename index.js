@@ -51,7 +51,6 @@ function addListeners() {
       {}
     );
 
-    data.id = states.books.length + 1;
 
     states.books.push(data);
 

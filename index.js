@@ -35,6 +35,30 @@ const states = {
   }
 };
 
+function addListeners() {
+  document.querySelector("form").addEventListener("submit", event => {
+    event.preventDefault();
+    const data = Array.from(event.target.elements).reduce(
+      (productData, product) => {
+        if (product.name === "sellingPoints") {
+          productData.selling_points = product.value.split(",");
+        } else if (product.name !== "") {
+          productData[product.name] = product.value;
+        }
+
+        return productData;
+      },
+      {}
+    );
+
+    data.id = states.books.length + 1;
+
+    states.books.push(data);
+
+    render(states);
+  });
+}
+
 function render(state) {
   root.innerHTML = `
     ${Navigation(state)}
@@ -48,30 +72,15 @@ function render(state) {
 axios // don't forget to npm install this!
   .get("https://api.savvycoders.com/books")
   .then(response => {
-    states.books = response.data;
+    states.products.books = response.data;
     render(states);
+    addListeners();
   });
 
-render(states);
-
-document.querySelector("form").addEventListener("submit", event => {
-  event.preventDefault();
-  const data = Array.from(event.target.elements).reduce(
-    (productData, product) => {
-      if (product.name === "sellingPoints") {
-        productData.selling_points = product.value.split(",");
-      } else if (product.name !== "") {
-        productData[product.name] = product.value;
-      }
-
-      return productData;
-    },
-    {}
-  );
-
-  data.id = states.books.length + 1;
-
-  states.books.push(data);
-
-  render(states);
-});
+axios // don't forget to npm install this!
+  .get("https://api.savvycoders.com/albums")
+  .then(response => {
+    states.products.albums = response.data;
+    render(states);
+    addListeners();
+  });

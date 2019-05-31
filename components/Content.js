@@ -1,7 +1,7 @@
-import Book from "./Book";
+import Product from "./Product";
 
-function buildBooks(books) {
-    return books.map(book => `${Book(book)}`)
+function buildProducts(products) {
+    return products.map(product => `${Product(product)}`)
 };
 
-export default (state) => `${buildBooks(state.books)}`;
+export default (state) => `${buildProducts(state.products.books)}`;

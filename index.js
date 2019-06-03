@@ -28,7 +28,8 @@ const states = {
           "Lasagna is delicious.",
           "The essential guide to Italian casseroles of all types.",
           "Real G's move silent, like Lasagna. -Lil Wayne"
-        ]
+        ],
+        type: 'book'
       }
     ],
     albums: []

@@ -31,8 +31,8 @@ const states = {
         ]
       }
     ],
-    albums: []
-  }
+    albums: [],
+  },
 };
 
 function addListeners() {

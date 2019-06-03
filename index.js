@@ -79,6 +79,6 @@ axios // don't forget to npm install this!
   .then(response => {
     states.products.albums = response.data;
     if (states.active === 'albums') {
-    render(states);
-    addListeners();
+      render(states);
+    }
   });

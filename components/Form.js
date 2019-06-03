@@ -22,7 +22,7 @@ export default state => `
   </div>
   <div>
     <label for="price">Price</label>
-    <input type="number" id="price" name="priceBook" placeholder="Price" />
+    <input type="number" id="price" name="price" placeholder="Price" />
   </div>
 
   <div>

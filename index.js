@@ -61,7 +61,7 @@ function render(state) {
     ${Header(state)}
     ${Content(state)}
     ${Form()}
-    ${Footer(state)}
+    ${Footer()}
     `;
 }
 

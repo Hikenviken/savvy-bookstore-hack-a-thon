@@ -64,6 +64,15 @@ function render(state) {
     ${Form()}
     ${Footer()}
     `;
+
+  const links = document.querySelectorAll("nav a");
+  links.forEach(link =>
+    link.addEventListener("click", ev => {
+      ev.preventDefault();
+      states.active = ev.target.textContent.toLowerCase();
+      render(states);
+    })
+  );
 }
 
 axios // don't forget to npm install this!

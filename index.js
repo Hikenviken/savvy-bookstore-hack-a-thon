@@ -44,8 +44,8 @@ function addListeners() {
       (productData, formField) => {
         if (formField.name === "selling_points") {
           productData.selling_points = formField.value.split(",");
-        } else if (product.name !== "") {
-          productData[product.name] = product.value;
+        } else if (formField.name === 'type' && formField.checked) {
+          productData.type = formField.value;
         }
         else if (formField.name !== "" && formField.name !== 'type') {
           productData[formField.name] = formField.value;

@@ -55,8 +55,14 @@ function addListeners() {
       },
       {}
     );
-    states.products[`${data.type}s`].push(data);
+
+    const pluralizedType = `${newProduct.type}s`
+
+    states.products[pluralizedType].push(newProduct);
     render(states);
+
+    // Push to data
+    axios.post(`https://api.savvycoders.com/${pluralizedType}`, newProduct);
   });
 }
 

@@ -33,6 +33,7 @@ const states = {
     ],
     albums: [],
   },
+  active: 'books'
 };
 
 function addListeners() {

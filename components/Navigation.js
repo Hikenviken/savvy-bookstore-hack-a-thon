@@ -1,9 +1,9 @@
 export default function Navigation(state){
     return`
-        <nav>    
+        <nav>
             <ul class="links">
-                <li>${state.navigation.links[0]}</li>
-                <li>${state.navigation.links[1]}</li>
+                <a href="#"><li>${state.navigation.links[0]}</li></a>
+                <a href="#"><li>${state.navigation.links[1]}</li></a>
             </ul>
         </nav>
 `;

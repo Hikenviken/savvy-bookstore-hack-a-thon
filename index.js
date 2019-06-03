@@ -40,12 +40,15 @@ const states = {
 function addListeners() {
   document.querySelector("form").addEventListener("submit", event => {
     event.preventDefault();
-    const data = Array.from(event.target.elements).reduce(
-      (productData, product) => {
-        if (product.name === "sellingPoints") {
-          productData.selling_points = product.value.split(",");
+    const newProduct = Array.from(event.target.elements).reduce(
+      (productData, formField) => {
+        if (formField.name === "selling_points") {
+          productData.selling_points = formField.value.split(",");
         } else if (product.name !== "") {
           productData[product.name] = product.value;
+        }
+        else if (formField.name !== "" && formField.name !== 'type') {
+          productData[formField.name] = formField.value;
         }
 
         return productData;

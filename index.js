@@ -4,32 +4,20 @@ import Content from './components/Content';
 import Form from '/components/Form';
 import Footer from './components/Footer';
 
+import axios from 'axios';
+import Book from './components/Book';
+
 const root = document.querySelector('#root');
 
 const states = {
-    'header': {
+       'header': {
         'title': 'Amagone Products Store',
     },
-    'navigation': {
-        'links': [ 'books', 'albums' ],
+    "navigation": {
+        "links": [ 'books', 'albums' ],
     },
-    'products': {
-        'books': [
-            {
-                'id': 1,
-                'title': 'Lasagna: A Retrospective',
-                'creator': 'Garfield',
-                'image':
-                'http://graphics8.nytimes.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-articleLarge.jpg',
-                'price': 24,
-                'selling_points': [
-                    'Lasagna is delicious.',
-                    'The essential guide to Italian casseroles of all types.',
-                    "Real G's move silent, like Lasagna. -Lil Wayne",
-                ]
-            }
-        ],
-
+    "products": {
+        "books": [],
         'albums': []
     },
     'active': 'books',
@@ -68,6 +56,7 @@ function render(state){
                         {}
                     );
 
+
                 states.products.books.push(newProduct);
                 render(states);
             }
@@ -82,4 +71,11 @@ links.forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
     });
+});
+
+axios.get('https://api.savvycoders.com/books').then((response) => {
+    states.products.books = response.data;
+});
+axios.get('https://api.savvycoders.com/albums').then((response) => {
+    states.products.albums = response.data;
 });

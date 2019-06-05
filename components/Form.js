@@ -2,17 +2,18 @@ export default () => `
 <form action="#">
   <span>
     <label for="title">Book Title</label>
-    <input type="text" id="title" placeholder="Book Title" />
+    <input type="text" id="title" name="title" placeholder="Book Title" />
   </span>
   <span>
     <label for="creator">Author</label>
-    <input type="text" id="creator" placeholder="Author" />
+    <input type="text" id="creator" name="creator" placeholder="Author" />
   </span>
   <div>
     <label for="image">URL</label>
     <input
       type="url"
       id="image"
+      name="image"
       placeholder="https://example.com"
       pattern="https://.*"
       size="30"
@@ -21,12 +22,13 @@ export default () => `
   </div>
   <div>
     <label for="price">Price</label>
-    <input type="number" id="price" placeholder="Price" />
+    <input type="number" id="price" name="price" placeholder="Price" />
   </div>
   <div>
     <label for="selling_points">Selling Points</label>
     <textarea
       id="selling_points"
+      name="selling_points"
       cols="30"
       rows="10"
     ></textarea>

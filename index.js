@@ -4,14 +4,16 @@ import Content from './components/Content';
 import Form from '/components/Form';
 import Footer from './components/Footer';
 
+import axios from 'axios';
+
 const root = document.querySelector('#root');
 
 const states = {
-    'header': {
+       'header': {
         'title': 'Amagone Products Store',
     },
-    'navigation': {
-        'links': [ 'books', 'albums' ],
+    "navigation": {
+        "links": [ 'books', 'albums' ],
     },
     'products': {
         'books': [
@@ -71,6 +73,7 @@ function render(state){
                             {}
                         );
 
+
                 states.products.books.push(newProduct);
                 render(states);
             }
@@ -85,4 +88,11 @@ links.forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
     });
+});
+
+axios.get('https://api.savvycoders.com/books').then((response) => {
+    states.products.books = response.data;
+});
+axios.get('https://api.savvycoders.com/albums').then((response) => {
+    states.products.albums = response.data;
 });

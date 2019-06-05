@@ -5,7 +5,6 @@ import Form from '/components/Form';
 import Footer from './components/Footer';
 
 import axios from 'axios';
-import Book from './components/Book';
 
 const root = document.querySelector('#root');
 
@@ -16,8 +15,23 @@ const states = {
     "navigation": {
         "links": [ 'books', 'albums' ],
     },
-    "products": {
-        "books": [],
+    'products': {
+        'books': [
+            {
+                'id': 1,
+                'title': 'Lasagna: A Retrospective',
+                'creator': 'Garfield',
+                'image':
+                    'http://graphics8.nytimes.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-articleLarge.jpg',
+                'price': 24,
+                'selling_points': [
+                    'Lasagna is delicious.',
+                    'The essential guide to Italian casseroles of all types.',
+                    "Real G's move silent, like Lasagna. -Lil Wayne",
+                ]
+            }
+        ],
+
         'albums': []
     },
     'active': 'books',
@@ -39,22 +53,25 @@ function render(state){
             (event) => {
                 event.preventDefault();
                 const makeToArray =
-                Array.from(event.target.elements);
+                    Array.from(event.target.elements);
                 const newProduct =
-                makeToArray
-                    .reduce(
-                        (product, formField) => {
-                            if(formField.name === 'sellingPoints'){
-                                product.sellingPoints = formField.value.split(',');
-                            }
-                            else{
-                                product[formField.name] = formField.value;
-                            }
+                    makeToArray
+                        .reduce(
+                            (product, formField) => {
+                                if(formField.name === 'sellingPoints'){
+                                    product.sellingPoints = formField.value.split(',');
+                                }
+                                else if(formField.name === 'type' && formField.checked === true){
+                                    states.active = formField.value;
+                                }
+                                else{
+                                    product[formField.name] = formField.value;
+                                }
 
-                            return product;
-                        },
-                        {}
-                    );
+                                return product;
+                            },
+                            {}
+                        );
 
 
                 states.products.books.push(newProduct);

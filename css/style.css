@@ -5,3 +5,9 @@ html {
 }
 
 /*put all other styles below this line, please*/
+
+header {
+  background-color: darkslateblue;
+  margin: 0px auto;
+  font-family: 'Roboto', sans-serif;
+}

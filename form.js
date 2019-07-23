@@ -1,7 +1,6 @@
 export default function(state) {
   return `
-  <div class="form-stuff">
-  <form action=" " method = "GET" title="book-query">
+  <form action=" " method = "POST">
     <label for="name" >NAME: </label>
     <input type="text"  name="name"/>
   
@@ -17,6 +16,5 @@ export default function(state) {
 <label for="sellingPoints" >SELLING POINTS: </label>
   <textarea name="sellingPoints"></textarea>
   </form>
-  </div>
 `
 }

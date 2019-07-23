@@ -19,5 +19,6 @@ export default function(state) {
 
                   </textarea>
   </form>
+  </div>
 `
 }

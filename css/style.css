@@ -58,9 +58,10 @@ textarea {
 }
 
 label {
-  color: darkred;
+  color: black;
   background: none;
   font-family: "Myriad Pro", "Helvetica", "Univers", sans-serif;
+  text-transform: uppercase;
 }
 
 .pic {
@@ -87,4 +88,18 @@ footer {
   grid-area: footer;
   display: flex;
   justify-content: center;
+}
+
+#submit,
+#clear {
+  margin: 10px auto;
+}
+
+#submit:hover,
+#clear:hover,
+#submit:focus,
+#clear:focus {
+  background-color: hotpink;
+  transform: scale(1.125, 1.125);
+  transition: 1.5s;
 }

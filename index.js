@@ -71,3 +71,11 @@ const states = {
 };
 
 render(states);
+
+const navItems = document.querySelectorAll('nav li');
+
+navItems.forEach(function eventListenerAdder(navItem){
+    navItem.addEventListener('click' , function clickHandler(event){
+        event.preventDefault();
+    });
+});

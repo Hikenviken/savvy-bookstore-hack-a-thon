@@ -44,16 +44,17 @@ textarea {
 }
 
 label {
-  color: darkred;
+  color: black;
   background: none;
   font-family: "Myriad Pro", "Helvetica", "Univers", sans-serif;
+  text-transform: uppercase;
 
 }
 
 textarea {
   height: 500px;
 }
-  
+
 .card {
   border: darkblue 2px solid;
   font-family: sans-serif;
@@ -64,4 +65,22 @@ textarea {
 footer {
   display: flex;
   justify-content: center;
+}
+
+#submit,
+#clear {
+
+
+  margin: 10px auto;
+
+
+
+
+}
+
+#submit:hover,
+#clear:hover {
+  background-color: hotpink;
+  transform: scale(1.125, 1.125);
+  transition: 1.5s;
 }

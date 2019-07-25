@@ -5,16 +5,16 @@
 
 function generateNavHTML(links){
   
-    let NavHTML = '<ul>';
+    let navHTML = '<ul>';
   
 
     links.forEach(function(link){
-        NavHTML += `<li>${link}</li>`;
+        navHTML += `<li>${link}</li>`;
     });
 
-    NavHTML += '</ul>';
+    navHTML += '</ul>';
     
-  return NavHTML;
+  return navHTML;
 }
 export default function(state){
     return `

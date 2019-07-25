@@ -1,10 +1,26 @@
+// export default function(state){
+// return `
+// <nav>
+   
+
+function generateNavHTML(links){
+  
+    let navHTML = '<ul>';
+  
+    links.forEach(function(link){
+        navHTML += `<li>${link}</li>`;
+    });
+
+    navHTML += '</ul>';
+    
+  return navHTML;
+}
+
 export default function(state){
     return `
   <nav>
-    <ul>
-      <li>Books</li>
-      <li>Albums</li>
-    </ul>
+          ${generateNavHTML(state.navigation)}
   </nav>
   `;
 }
+

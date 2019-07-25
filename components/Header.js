@@ -1,6 +1,10 @@
 export default function(state) {
-  return `<header>
-    <h1>The Pentagon</h1>
-    <h2>We sell classified books</h2>
-  </header>`;
+
+  let levels = '<header>';
+
+  state.header.forEach(function(genHeader,index) {
+    levels += `<h${index+1}>${genHeader}</h${index+1}>`
+  });
+
+  return `${levels}</header>`;
 }

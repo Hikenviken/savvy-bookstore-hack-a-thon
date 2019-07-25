@@ -1,6 +1,6 @@
 
  function generateBookHTML(books) {
-  let listHTML = '<ul></ul>';
+  let listHTML = '<ul>';
   books.forEach(function(book) {
     listHTML += `<div class="card"><li>${book.name}</li>
     <li>${book.author}</li>
@@ -9,6 +9,7 @@
     <li>${book.sellingPoints}</li></div>`
 
   });
+  listHTML += '</ul>'
   return listHTML;
 
 }

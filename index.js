@@ -16,8 +16,8 @@ function render(state){
 }
 
 const states = {
-    'navigation': [ 'Books', 'Albums' ],
-    'title': ['The Pentagon', 'We sell classified books'],
+  'navigation': [ 'Books', 'Albums' ],
+    'title': [ 'The Pentagon', 'We sell classified books' ],
     'books': [
         {
             'id': 1,
@@ -70,13 +70,9 @@ const states = {
                 'Wowee wow wow! -Chris Walken'
             ]
         }
-    ]
-};
+    ]}
 
 render(states);
-
-
-// Form operations once submit is pushed.
 
 const formData =  document.querySelector('form');
 
@@ -87,7 +83,6 @@ formData.addEventListener('submit', (event) => {
 
   // New Book Object to push into array of book objects
   const newBook = {
-
     name : data[0].value,
     author : data[1].value,
     pictureUrl : data[2].value,
@@ -96,5 +91,12 @@ formData.addEventListener('submit', (event) => {
     }
   states.books.push(newBook);
   render(states);
-
   });
+
+const navItems = document.querySelectorAll('nav li');
+
+navItems.forEach(function eventListenerAdder(navItem){
+    navItem.addEventListener('click' , function clickHandler(event){
+        event.preventDefault();
+    });
+});

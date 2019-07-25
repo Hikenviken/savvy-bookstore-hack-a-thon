@@ -16,8 +16,8 @@ function render(state){
 }
 
 const states = {
-  'navigation': [ 'Books', 'Albums' ],
     'title': [ 'The Pentagon', 'We sell classified books' ],
+    'navigation': [ 'Books', 'Albums' ],
     'books': [
         {
             'id': 1,
@@ -90,6 +90,7 @@ formData.addEventListener('submit', (event) => {
     // sellingPoints :
     }
   states.books.push(newBook);
+  render(states);
   });
 
 const navItems = document.querySelectorAll('nav li');

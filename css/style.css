@@ -6,8 +6,16 @@ html {
 
 /*put all other styles below this line, please*/
 
+body {
+  font-family: "Roboto", sans-serif;
+}
 header {
-  background-color: darkslateblue;
+  background-color: white;
   margin: 0px auto;
-  font-family: 'Roboto', sans-serif;
+}
+nav {
+  background-color: darkslategray;
+}
+content {
+  background-color: #cbd9f1;
 }

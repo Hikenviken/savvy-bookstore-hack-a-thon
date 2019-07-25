@@ -16,14 +16,14 @@ function render(state){
 }
 
 const states = {
-  'navigation': [ 'Books', 'Albums' ],
     'title': [ 'The Pentagon', 'We sell classified books' ],
+    'navigation': [ 'Books', 'Albums' ],
     'books': [
         {
             'id': 1,
             'name': 'Lasagna: A Retrospective',
             'author': 'Garfield',
-            'pictureUrl': 'http://graphics8.nytimes.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-articleLarge.jpg',
+            'pictureUrl': 'https://lh3.googleusercontent.com/_V0CoK16CILc/TYtNtXtKUVI/AAAAAAAAJkM/IueuDjFz2Rk/w1200-h630-p-k-no-nu/%E8%8C%84%E5%AD%90%E8%82%89%E9%86%AC%E5%8D%83%E5%B1%A4%E6%89%B9%20Beef%20and%20Eggplant%20Lasagna01.jpg',
             'price': 24,
             'sellingPoints': [
                 'Lasagna is delicious.',
@@ -36,7 +36,7 @@ const states = {
             'id': 2,
             'name': 'Looking for JJ',
             'author': 'Anne Cassidy',
-            'pictureUrl': 'http://d202m5krfqbpi5.cloudfront.net/books/1328833113l/1522147.jpg',
+            'pictureUrl': 'http://ecx.images-amazon.com/images/I/41NK-%2BZOW2L._SL500_AA300_.jpg',
             'price': 45,
             'sellingPoints': [
                 "It's fair to say that Looking for JJ is a book that will haunt you.",
@@ -90,6 +90,7 @@ formData.addEventListener('submit', (event) => {
     // sellingPoints :
     }
   states.books.push(newBook);
+  render(states);
   });
 
 const navItems = document.querySelectorAll('nav li');

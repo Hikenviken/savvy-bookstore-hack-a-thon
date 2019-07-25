@@ -8,16 +8,32 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
+
 }
+
+#root{
+  display: grid;
+  grid-template-columns: 1fr;
+
+  grid-template-areas:
+  "header"
+  "nav"
+  "content"
+  "footer"
+}
+
 header {
+  grid-area: header;
   background-color: white;
   margin: 0px auto;
 }
 nav {
+  grid-area: nav;
   background-color: darkslategray;
 }
 content {
-  background-color: #cbd9f1;
+  grid-area: content;
+  background-color: #474646;
 }
 
 /* Form Styles */
@@ -39,15 +55,17 @@ textarea {
   margin: 0 auto;
   padding: 10px;
   background-color: #ddd;
-
-
 }
 
 label {
-  color: darkred;
+  color: black;
   background: none;
   font-family: "Myriad Pro", "Helvetica", "Univers", sans-serif;
+  text-transform: uppercase;
+}
 
+.pic {
+  max-width: 200px;
 }
 
 textarea {
@@ -61,12 +79,18 @@ textarea {
   list-style: none;
 }
 
+.flexbox {
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
+  grid-area: footer;
   display: flex;
   justify-content: center;
 }
 
-nav>ul {
+nav > ul {
 display: flex;
 background: rgb(231, 4, 15);
 justify-content: space-around;
@@ -76,4 +100,18 @@ padding: 20px;
 list-style-type: none;
 font-size: 25px;
 margin: 10px;
+}
+  
+#submit,
+#clear {
+  margin: 10px auto;
+}
+
+#submit:hover,
+#clear:hover,
+#submit:focus,
+#clear:focus {
+  background-color: hotpink;
+  transform: scale(1.125, 1.125);
+  transition: 1.5s;
 }

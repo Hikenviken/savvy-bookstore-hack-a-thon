@@ -35,10 +35,40 @@ content {
   grid-area: content;
   background-color: #474646;
 }
-footer {
-  grid-area: footer;
+
+/* Form Styles */
+form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
+  width: 60vw;
+  background: linear-gradient( navy, cyan 30%, white 10%, orangered 30%, darkred);
+  outline: #000 solid 3px;
+  margin: 0 auto;
+}
+
+label,
+input,
+textarea {
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #ddd;
+}
+
+label {
+  color: darkred;
+  background: none;
+  font-family: "Myriad Pro", "Helvetica", "Univers", sans-serif;
+}
+
+.pic {
+  max-width: 200px;
+}
+
+textarea {
+  height: 500px;
 }
 
 .card {
@@ -46,4 +76,15 @@ footer {
   font-family: sans-serif;
   text-decoration: none;
   list-style: none;
-  }
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+}

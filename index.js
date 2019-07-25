@@ -2,12 +2,15 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
+import Form from './components/Form';
+
 
 function render(state){
     document.querySelector('#root').innerHTML = `
       ${Navigation(state)}
       ${Header(state)}
       ${Content(state)}
+      ${Form(state)}
       ${Footer(state)}
     `;
 }
@@ -20,7 +23,7 @@ const states = {
             'id': 1,
             'name': 'Lasagna: A Retrospective',
             'author': 'Garfield',
-            'pictureUrl': 'http://graphics8.nytimes.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-articleLarge.jpg',
+            'pictureUrl': 'https://lh3.googleusercontent.com/_V0CoK16CILc/TYtNtXtKUVI/AAAAAAAAJkM/IueuDjFz2Rk/w1200-h630-p-k-no-nu/%E8%8C%84%E5%AD%90%E8%82%89%E9%86%AC%E5%8D%83%E5%B1%A4%E6%89%B9%20Beef%20and%20Eggplant%20Lasagna01.jpg',
             'price': 24,
             'sellingPoints': [
                 'Lasagna is delicious.',
@@ -33,7 +36,7 @@ const states = {
             'id': 2,
             'name': 'Looking for JJ',
             'author': 'Anne Cassidy',
-            'pictureUrl': 'http://d202m5krfqbpi5.cloudfront.net/books/1328833113l/1522147.jpg',
+            'pictureUrl': 'http://ecx.images-amazon.com/images/I/41NK-%2BZOW2L._SL500_AA300_.jpg',
             'price': 45,
             'sellingPoints': [
                 "It's fair to say that Looking for JJ is a book that will haunt you.",
@@ -69,7 +72,26 @@ const states = {
         }
     ]}
 
- render(states);
+render(states);
+
+const formData =  document.querySelector('form');
+
+formData.addEventListener('submit', (event) => {
+
+  event.preventDefault();
+  const data = event.target.elements;
+
+  // New Book Object to push into array of book objects
+  const newBook = {
+    name : data[0].value,
+    author : data[1].value,
+    pictureUrl : data[2].value,
+    price : data[3].value,
+    // sellingPoints :
+    }
+  states.books.push(newBook);
+  render(states);
+  });
 
 const navItems = document.querySelectorAll('nav li');
 

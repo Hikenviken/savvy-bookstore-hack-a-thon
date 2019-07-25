@@ -36,7 +36,7 @@ const states = {
       "id": 1,
       "name": "Lasagna: A Retrospective",
       "author": "Garfield",
-      "pictureUrl": "http://graphics8.nytimes.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-articleLarge.jpg",
+      "pictureUrl": "https://i.ytimg.com/vi/ewiX4_43qgU/hqdefault.jpg",
       "price": 24,
       "sellingPoints": [
           "Lasagna is delicious.",
@@ -49,7 +49,7 @@ const states = {
       "id": 2,
       "name": "Looking for JJ",
       "author": "Anne Cassidy",
-      "pictureUrl": "http://d202m5krfqbpi5.cloudfront.net/books/1328833113l/1522147.jpg",
+      "pictureUrl": "http://ecx.images-amazon.com/images/I/41FpNnXklfL._SX218_BO1,204,203,200_QL40_.jpg",
       "price": 45,
       "sellingPoints": [
           "It's fair to say that Looking for JJ is a book that will haunt you.",

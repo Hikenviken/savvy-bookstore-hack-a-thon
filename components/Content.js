@@ -1,6 +1,6 @@
 
  function generateBookHTML(books) {
-  let listHTML = '<ul>';
+  let listHTML = '<ul></ul>';
   books.forEach(function(book) {
     listHTML += `<div class="card"><li>${book.name}</li>
     <li>${book.author}</li>

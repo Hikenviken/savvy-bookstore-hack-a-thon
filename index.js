@@ -90,6 +90,7 @@ formData.addEventListener('submit', (event) => {
     // sellingPoints :
     }
   states.books.push(newBook);
+  render(states);
   });
 
 const navItems = document.querySelectorAll('nav li');

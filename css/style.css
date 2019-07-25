@@ -19,3 +19,37 @@ nav {
 content {
   background-color: #cbd9f1;
 }
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 60vw;
+  background: linear-gradient( navy, cyan 30%, white 10%, orangered 30%, darkred);
+  outline: #000 solid 3px;
+  margin: 0 auto;
+}
+
+label,
+input,
+textarea {
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #ddd;
+
+
+}
+
+label {
+  color: darkred;
+  background: none;
+  font-family: "Myriad Pro", "Helvetica", "Univers", sans-serif;
+
+}
+
+textarea {
+  height: 500px;
+}

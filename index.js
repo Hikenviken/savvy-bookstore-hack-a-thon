@@ -71,3 +71,27 @@ const states = {
 };
 
 render(states);
+
+
+// Form operations once submit is pushed.
+
+const formData =  document.querySelector('form');
+
+formData.addEventListener('submit', (event) => {
+
+  event.preventDefault();
+  const data = event.target.elements;
+
+  // New Book Object to push into array of book objects
+  const newBook = {
+
+    name : data[0].value;
+    author : data[1].value;
+    pictureUrl : data[2].value;
+    price : data[3].value;
+    // sellingPoints :
+    }
+  book.push(newbook);
+
+
+  });

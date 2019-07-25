@@ -12,6 +12,24 @@ function render(state){
     `;
 }
 
+
+
+
+function buildCardHTML(books) {
+
+  let booksHTML = "";
+  books.forEach(function (book) {
+    console.log(book)
+
+//  booksHTML +=
+
+ //  return;
+})
+// export default function(state) {
+ //  buildCardHTML(state.books);
+}
+
+
 const states = {
   books: [
     {
@@ -44,7 +62,7 @@ const states = {
       "id": 3,
       "name": "The Alchemist",
       "author": "Paulo Coelho",
-      "pictureUrl": "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.buyoye.pk%2Fwp-content%2Fuploads%2F2017%2F04%2FThe-Alchemist-by-Paulo-Coelho.jpg&f=1",
+      "pictureUrl": "https://n1.sdlcdn.com/imgs/b/y/q/624303691271_1-ed95c.jpg",
       "price": 24,
       "sellingPoints": [
           "My wrist deserve a shout out, 'I'm like what up wrist?' My stove deserve a shout out, 'I'm like what up stove",
@@ -60,10 +78,12 @@ const states = {
       "pictureUrl": "https://img.huffingtonpost.com/asset/5988b0111400001f00ecf8d9.jpeg?cache=bv2dgjc1xj&ops=crop_6_25_1165_1182,scalefit_720_noupscale",
       "price": 14.21,
       "sellingPoints": [
-          "Lasagna is delicious.This is a rip roaring read about Phil Spector the genius producer famous for his wall of sound and who made himself more famous than his artists who when he started out was a bit ego -centric",
+          "This is a rip roaring read about Phil Spector the genius producer famous for his wall of sound and who made himself more famous than his artists who when he started out was a bit ego -centric",
           "I loved the chapters about the creation of the Wall of Sound and Phil's big hits and famous failures, and the anecdotes detailing the music culture of the '60s and '70s.",
           "Wowee wow wow! -Chris Walken"
       ]
     }
   ]
 }
+
+ render(states);

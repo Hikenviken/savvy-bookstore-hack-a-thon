@@ -20,6 +20,13 @@ content {
   background-color: #cbd9f1;
 }
 
+.card {
+border: darkblue 2px solid;
+font-family: sans-serif;
+text-decoration: none;
+list-style: none;
+}
+
 footer {
   display: flex;
   justify-content: center;

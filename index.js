@@ -13,8 +13,8 @@ function render(state){
 }
 
 const states = {
-    'navigation': [ 'Books', 'Albums' ],
-    'title': ['The Pentagon', 'We sell classified books'],
+  'navigation': [ 'Books', 'Albums' ],
+    'title': [ 'The Pentagon', 'We sell classified books' ],
     'books': [
         {
             'id': 1,
@@ -67,10 +67,9 @@ const states = {
                 'Wowee wow wow! -Chris Walken'
             ]
         }
-    ]
-};
+    ]}
 
-render(states);
+ render(states);
 
 const navItems = document.querySelectorAll('nav li');
 

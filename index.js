@@ -2,12 +2,15 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
+import Form from './components/Form';
+
 
 function render(state){
     document.querySelector('#root').innerHTML = `
       ${Navigation(state)}
       ${Header(state)}
       ${Content(state)}
+      ${Form(state)}
       ${Footer(state)}
     `;
 }
@@ -85,13 +88,14 @@ formData.addEventListener('submit', (event) => {
   // New Book Object to push into array of book objects
   const newBook = {
 
-    name : data[0].value;
-    author : data[1].value;
-    pictureUrl : data[2].value;
-    price : data[3].value;
+    name : data[0].value,
+    author : data[1].value,
+    pictureUrl : data[2].value,
+    price : data[3].value,
     // sellingPoints :
     }
-  book.push(newbook);
+  console.log(data);
+  states.books.push(newBook);
 
 
   });

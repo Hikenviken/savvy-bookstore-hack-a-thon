@@ -14,6 +14,7 @@ function render(state){
 
 const states = {
     'navigation': [ 'Books', 'Albums' ],
+    'title': ['The Pentagon', 'We sell classified books'],
     'books': [
         {
             'id': 1,
@@ -78,4 +79,3 @@ navItems.forEach(function eventListenerAdder(navItem){
         event.preventDefault();
     });
 });
-

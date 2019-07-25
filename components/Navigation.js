@@ -7,7 +7,6 @@ function generateNavHTML(links){
   
     let navHTML = '<ul>';
   
-
     links.forEach(function(link){
         navHTML += `<li>${link}</li>`;
     });
@@ -16,6 +15,7 @@ function generateNavHTML(links){
     
   return navHTML;
 }
+
 export default function(state){
     return `
   <nav>

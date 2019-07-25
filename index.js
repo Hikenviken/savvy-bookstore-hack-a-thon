@@ -94,8 +94,7 @@ formData.addEventListener('submit', (event) => {
     price : data[3].value,
     // sellingPoints :
     }
-  console.log(data);
   states.books.push(newBook);
-
+  render(states);
 
   });

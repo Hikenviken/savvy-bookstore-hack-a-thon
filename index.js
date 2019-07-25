@@ -16,8 +16,8 @@ function render(state){
 }
 
 const states = {
-  'navigation': [ 'Books', 'Albums' ],
     'title': [ 'The Pentagon', 'We sell classified books' ],
+    'navigation': [ 'Books', 'Albums' ],
     'books': [
         {
             'id': 1,

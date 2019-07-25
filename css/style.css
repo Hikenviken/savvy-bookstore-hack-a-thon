@@ -19,3 +19,8 @@ nav {
 content {
   background-color: #cbd9f1;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+}

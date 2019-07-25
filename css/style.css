@@ -8,26 +8,42 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
+
 }
+
+#root{
+  display: grid;
+  grid-template-columns: 1fr;
+
+  grid-template-areas:
+  "header"
+  "nav"
+  "content"
+  "footer"
+}
+
 header {
+  grid-area: header;
   background-color: white;
   margin: 0px auto;
 }
 nav {
+  grid-area: nav;
   background-color: darkslategray;
 }
 content {
-  background-color: #cbd9f1;
+  grid-area: content;
+  background-color: #474646;
 }
-
-.card {
-border: darkblue 2px solid;
-font-family: sans-serif;
-text-decoration: none;
-list-style: none;
-}
-
 footer {
+  grid-area: footer;
   display: flex;
   justify-content: center;
 }
+
+.card {
+  border: darkblue 2px solid;
+  font-family: sans-serif;
+  text-decoration: none;
+  list-style: none;
+  }

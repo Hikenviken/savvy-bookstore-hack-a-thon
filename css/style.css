@@ -53,7 +53,7 @@ label {
 textarea {
   height: 500px;
 }
-  
+
 .card {
   border: darkblue 2px solid;
   font-family: sans-serif;
@@ -64,4 +64,16 @@ textarea {
 footer {
   display: flex;
   justify-content: center;
+}
+
+nav>ul {
+display: flex;
+background: rgb(231, 4, 15);
+justify-content: space-around;
+font-weight: Bold;
+text-transform: uppercase;
+padding: 20px;
+list-style-type: none;
+font-size: 25px;
+margin: 10px;
 }

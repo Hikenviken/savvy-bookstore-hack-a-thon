@@ -49,16 +49,28 @@ label {
   font-family: "Myriad Pro", "Helvetica", "Univers", sans-serif;
 
 }
+.pic {
+max-width: 200px;
+
+
+}
 
 textarea {
   height: 500px;
 }
-  
+
 .card {
   border: darkblue 2px solid;
   font-family: sans-serif;
   text-decoration: none;
   list-style: none;
+}
+.flexbox {
+
+display: flex;
+flex-direction: column;
+
+
 }
 
 footer {

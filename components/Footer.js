@@ -1,16 +1,16 @@
-function generateNav(links) {
-  let listHTML = '<ul>';
+function generateNav(links){
+    let listHTML = '<ul>';
 
-  links.forEach(function(link) {
-     listHTML += `<li>${link}</li>`
-  });
+    links.forEach(function linkIterator(link){
+        listHTML += `<li>${link}</li>`;
+    });
 
-  listHTML += '</ul>'
+    listHTML += '</ul>';
 
-  return listHTML;
+    return listHTML;
 }
 
 
-export default function(state) {
-  return `<footer>&copy;2019 - ${state.title[0]} - ${generateNav(state.navigation)}</footer>`;
+export default function(state){
+    return `<footer>&copy;2019 - ${state.title[0]} - ${generateNav(state.navigation)}</footer>`;
 }

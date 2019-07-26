@@ -1,8 +1,9 @@
 
- function generateBookHTML(books) {
-  let listHTML = '';
-  books.forEach(function bookIterator(book) {
-    listHTML += `
+function generateBookHTML(books){
+    let listHTML = '';
+
+    books.forEach(function bookIterator(book){
+        listHTML += `
     <div class="card">
         <ul>
             <li>${book.name}</li>
@@ -11,11 +12,10 @@
             <li>${book.price}</li>
             <li>${book.sellingPoints}</li>
         </ul>
-    </div>`
+    </div>`;
+    });
 
-  });
-  return listHTML;
-
+    return listHTML;
 }
 
 
@@ -24,6 +24,6 @@ export default function(state){
     <div class="flexbox">
     ${generateBookHTML(state.books)}
     </div>
-    `
+    `;
 }
 

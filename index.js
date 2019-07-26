@@ -1,9 +1,8 @@
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
-import Footer from './components/Footer';
 import Form from './components/Form';
-
+import Footer from './components/Footer';
 
 function render(state){
     document.querySelector('#root').innerHTML = `
@@ -70,28 +69,28 @@ const states = {
                 'Wowee wow wow! -Chris Walken'
             ]
         }
-    ]}
+    ] };
 
 render(states);
 
 const formData =  document.querySelector('form');
 
 formData.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = event.target.elements;
 
-  event.preventDefault();
-  const data = event.target.elements;
-
-  // New Book Object to push into array of book objects
-  const newBook = {
-    name : data[0].value,
-    author : data[1].value,
-    pictureUrl : data[2].value,
-    price : data[3].value,
+    // New Book Object to push into array of book objects
+    const newBook = {
+        'name': data[0].value,
+        'author': data[1].value,
+        'pictureUrl': data[2].value,
+        'price': data[3].value,
     // sellingPoints :
-    }
-  states.books.push(newBook);
-  render(states);
-  });
+    };
+
+    states.books.push(newBook);
+    render(states);
+});
 
 const navItems = document.querySelectorAll('nav li');
 

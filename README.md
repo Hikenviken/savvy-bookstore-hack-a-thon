@@ -1,4 +1,4 @@
-# Savvy Coders Hackathon \#2
+# Savvy Coders Hackathon Bookstore
 
 ## Web Store Hackathon
 

@@ -15,8 +15,8 @@ export default function(){
   <label for="sellingPoints">Selling Points: </label>
   <textarea name="sellingPoints" id="sellingPoints"></textarea>
 
-  <input type="submit" id="submit" name="addBook" value="submit" />
-  <input type="reset" id="clear" name="clear form" value="clear form" />
+  <input type="submit" id="submit" />
+  <input type="reset" id="clear" />
 </form>
 `;
 }

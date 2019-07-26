@@ -1,3 +1,4 @@
+// Import local dependencies
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
@@ -15,8 +16,8 @@ function render(state){
 }
 
 const states = {
-    'title': [ 'The Pentagon', 'We sell classified books' ],
     'navigation': [ 'Books', 'Albums' ],
+    'title': [ 'The Pentagon', 'We sell classified books' ],
     'books': [
         {
             'id': 1,
@@ -30,7 +31,6 @@ const states = {
                 "Real G's move silent, like Lasagna. -Lil Wayne"
             ]
         },
-
         {
             'id': 2,
             'name': 'Looking for JJ',
@@ -43,7 +43,6 @@ const states = {
                 'I chosed this book because i thought it would look kinda good to read and read something new to read too. so i said why not.'
             ]
         },
-
         {
             'id': 3,
             'name': 'The Alchemist',
@@ -56,7 +55,6 @@ const states = {
                 'Moms Spaghetti'
             ]
         },
-
         {
             'id': 4,
             'name': 'Tearing Down the Wall of Sound: The Rise and Fall of Phil Spector',
@@ -85,7 +83,7 @@ formData.addEventListener('submit', (event) => {
         'author': data[1].value,
         'pictureUrl': data[2].value,
         'price': data[3].value,
-    // sellingPoints :
+        // sellingPoints :
     };
 
     states.books.push(newBook);

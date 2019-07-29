@@ -1,5 +1,5 @@
 
-function generateBookHTML(books){
+function generateBooksHTML(books){
     let listHTML = '';
 
     books.forEach(function bookIterator(book){
@@ -18,11 +18,10 @@ function generateBookHTML(books){
     return listHTML;
 }
 
-
 export default function(state){
     return  `
     <div class="flexbox">
-    ${generateBookHTML(state.books)}
+        ${generateBooksHTML(state.books)}
     </div>
     `;
 }

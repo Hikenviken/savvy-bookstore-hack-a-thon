@@ -1,9 +1,11 @@
+// Import local dependencies
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
 import Form from './components/Form';
 import Footer from './components/Footer';
 
+// Fxn. Declaration
 function render(state){
     document.querySelector('#root').innerHTML = `
       ${Navigation(state)}
@@ -14,15 +16,17 @@ function render(state){
     `;
 }
 
+// A collection (model) of PIECES OF STATE (data) that our FUNCTIONAL COMPONENTS (views) will receive.
 const states = {
-    'title': [ 'The Pentagon', 'We sell classified books' ],
     'navigation': [ 'Books', 'Albums' ],
+    'title': [ 'The Pentagon', 'We sell classified books' ],
     'books': [
         {
             'id': 1,
             'name': 'Lasagna: A Retrospective',
             'author': 'Garfield',
-            'pictureUrl': 'https://lh3.googleusercontent.com/_V0CoK16CILc/TYtNtXtKUVI/AAAAAAAAJkM/IueuDjFz2Rk/w1200-h630-p-k-no-nu/%E8%8C%84%E5%AD%90%E8%82%89%E9%86%AC%E5%8D%83%E5%B1%A4%E6%89%B9%20Beef%20and%20Eggplant%20Lasagna01.jpg',
+            'pictureUrl':
+                'https://lh3.googleusercontent.com/_V0CoK16CILc/TYtNtXtKUVI/AAAAAAAAJkM/IueuDjFz2Rk/w1200-h630-p-k-no-nu/%E8%8C%84%E5%AD%90%E8%82%89%E9%86%AC%E5%8D%83%E5%B1%A4%E6%89%B9%20Beef%20and%20Eggplant%20Lasagna01.jpg',
             'price': 24,
             'sellingPoints': [
                 'Lasagna is delicious.',
@@ -30,12 +34,12 @@ const states = {
                 "Real G's move silent, like Lasagna. -Lil Wayne"
             ]
         },
-
         {
             'id': 2,
             'name': 'Looking for JJ',
             'author': 'Anne Cassidy',
-            'pictureUrl': 'http://ecx.images-amazon.com/images/I/41NK-%2BZOW2L._SL500_AA300_.jpg',
+            'pictureUrl':
+                'http://ecx.images-amazon.com/images/I/41NK-%2BZOW2L._SL500_AA300_.jpg',
             'price': 45,
             'sellingPoints': [
                 "It's fair to say that Looking for JJ is a book that will haunt you.",
@@ -43,12 +47,12 @@ const states = {
                 'I chosed this book because i thought it would look kinda good to read and read something new to read too. so i said why not.'
             ]
         },
-
         {
             'id': 3,
             'name': 'The Alchemist',
             'author': 'Paulo Coelho',
-            'pictureUrl': 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.buyoye.pk%2Fwp-content%2Fuploads%2F2017%2F04%2FThe-Alchemist-by-Paulo-Coelho.jpg&f=1',
+            'pictureUrl':
+                'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.buyoye.pk%2Fwp-content%2Fuploads%2F2017%2F04%2FThe-Alchemist-by-Paulo-Coelho.jpg&f=1',
             'price': 24,
             'sellingPoints': [
                 "My wrist deserve a shout out, 'I'm like what up wrist?' My stove deserve a shout out, 'I'm like what up stove",
@@ -56,12 +60,13 @@ const states = {
                 'Moms Spaghetti'
             ]
         },
-
         {
             'id': 4,
-            'name': 'Tearing Down the Wall of Sound: The Rise and Fall of Phil Spector',
+            'name':
+                'Tearing Down the Wall of Sound: The Rise and Fall of Phil Spector',
             'author': 'Mick Brown',
-            'pictureUrl': 'https://img.huffingtonpost.com/asset/5988b0111400001f00ecf8d9.jpeg?cache=bv2dgjc1xj&ops=crop_6_25_1165_1182,scalefit_720_noupscale',
+            'pictureUrl':
+                'https://img.huffingtonpost.com/asset/5988b0111400001f00ecf8d9.jpeg?cache=bv2dgjc1xj&ops=crop_6_25_1165_1182,scalefit_720_noupscale',
             'price': 14.21,
             'sellingPoints': [
                 'Lasagna is delicious.This is a rip roaring read about Phil Spector the genius producer famous for his wall of sound and who made himself more famous than his artists who when he started out was a bit ego -centric',
@@ -69,33 +74,41 @@ const states = {
                 'Wowee wow wow! -Chris Walken'
             ]
         }
-    ] };
+    ]
+};
 
+// 'Business logic'
 render(states);
 
-const formData =  document.querySelector('form');
+// Developer's Note: This variable Declaration must take place after the page has rendered!
+const navItems = document.querySelectorAll('nav li');
+
+navItems.forEach(function eventListenerAdder(navItem){
+    navItem.addEventListener('click', function clickHandler(event){
+        event.preventDefault();
+    });
+});
+
+const formData = document.querySelector('form');
 
 formData.addEventListener('submit', (event) => {
     event.preventDefault();
     const data = event.target.elements;
 
-    // New Book Object to push into array of book objects
+    // Create a new 📖 from the values stored in the form submission event.
+    // TODO: Avoid accessing each element by its index and make this more modular!
     const newBook = {
         'name': data[0].value,
         'author': data[1].value,
         'pictureUrl': data[2].value,
-        'price': data[3].value,
-    // sellingPoints :
+        'price': data[3].value
+        // sellingPoints :
     };
 
+    // Push the new 📖 into states.
     states.books.push(newBook);
+
+    // Re-render the app so we actually see the new 📖.
     render(states);
 });
 
-const navItems = document.querySelectorAll('nav li');
-
-navItems.forEach(function eventListenerAdder(navItem){
-    navItem.addEventListener('click' , function clickHandler(event){
-        event.preventDefault();
-    });
-});

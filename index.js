@@ -36,9 +36,10 @@ document
   .addEventListener(
       'submit',
       (event) => {
+        event.preventDefault();
           const data = event.target.elements;
 
         console.log(data);
-
-      });
+        console.log(state);
+      })
 

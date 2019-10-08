@@ -20,8 +20,8 @@ const state = {
   ]
 };
 
-function render(state){
-  document.querySelector("#root").innerHTML = `
+function render(state = state){
+   document.querySelector("#root").innerHTML = `
   ${Header(state)}
   ${Nav(state)}
   ${Main(state)}
@@ -30,3 +30,15 @@ function render(state){
 }
 
 render(state);
+
+document
+  .querySelector('form')
+  .addEventListener(
+      'submit',
+      (event) => {
+          const data = event.target.elements;
+
+        console.log(data);
+
+      });
+
